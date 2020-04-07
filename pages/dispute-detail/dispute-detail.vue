@@ -115,7 +115,7 @@
 				padding: 0 12rpx;
 				font-size: 26rpx;
 				color: #056efe;
-				line-height: 40rpx;
+				line-height: 36rpx;
 				border: 1rpx solid #056efe;
 			}
 

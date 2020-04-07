@@ -19,10 +19,10 @@
 					</view>
 					<view class="service-word">服务</view>
 				</view>
-				<view class="flex-nowrap">
+				<!-- <view class="flex-nowrap">
 					<view class="service-word">服务指南</view>
 					<view class="iconfont arrow-right"></view>
-				</view>
+				</view> -->
 			</view>
 			<view class="online-dispute flex-nowrap">
 				<navigator class="dispute-item" url="../online-dispute/online-dispute" hover-class="navigator-hover">
@@ -31,12 +31,12 @@
 					</view>
 					<view class="item-word">在线调解</view>
 				</navigator>
-				<view class="dispute-item">
+				<!-- <view class="dispute-item">
 					<view class="item-image">
 						<view class="iconfont consulting"></view>
 					</view>
 					<view class="item-word">留言咨询</view>
-				</view>
+				</view> -->
 				<navigator class="dispute-item" url="../dispute-team/dispute-team" hover-class="navigator-hover">
 					<view class="item-image">
 						<view class="iconfont team"></view>
@@ -76,18 +76,18 @@
 						img: '/static/images/project.png',
 						content: '《帮忙有一套》电视节目预告、回访及直播。'
 					},
-					{
-						id: '0ca16c1c979a4895b1ae2a146773182e',
-						title: '帮忙有一套',
-						img: '/static/images/logo.png',
-						content: '《帮忙有一套》电视节目预告、回访及直播。'
-					},
-					{
-						id: '0ca16c1c979a4895b1ae2a146773182e',
-						title: '帮忙有一套',
-						img: '/static/images/project.png',
-						content: '《帮忙有一套》电视节目预告、回访及直播。'
-					}
+					// {
+					// 	id: '0ca16c1c979a4895b1ae2a146773182e',
+					// 	title: '帮忙有一套',
+					// 	img: '/static/images/logo.png',
+					// 	content: '《帮忙有一套》电视节目预告、回访及直播。'
+					// },
+					// {
+					// 	id: '0ca16c1c979a4895b1ae2a146773182e',
+					// 	title: '帮忙有一套',
+					// 	img: '/static/images/project.png',
+					// 	content: '《帮忙有一套》电视节目预告、回访及直播。'
+					// }
 				]
 			}
 		},
@@ -172,7 +172,7 @@
 			flex-direction: row;
 			flex-wrap: wrap;
 			justify-content: center;
-			width: calc((100% - 40rpx) / 3);
+			width: calc((100% - 20rpx) / 2);
 			height: 210rpx;
 			margin-right: 20rpx;
 

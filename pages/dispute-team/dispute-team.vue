@@ -78,7 +78,6 @@
 					</view>
 				</view>
 			</view>
-
 		</view>
 
 	</view>
@@ -121,12 +120,14 @@
 			};
 		},
 		methods: {
+			// 下拉加载
 			lower: function(e) {
 				console.log(e)
 				this.data.pageNo += 1
 				console.log('data',this.data.pageNo)
 				this.getTeatList('get')
 			},
+			// 搜索列表
 			search: function(event) {
 				this.data.name = event.target.value;
 				console.log(this.data.name)
@@ -163,6 +164,7 @@
 					},
 				});
 			},
+			// 点击区域筛选
 			changeAreaSelect: function(index) {
 				console.log('this.selectList[index]',this.selectList[index])
 				this.areaName = this.selectList[index];
@@ -171,6 +173,7 @@
 				this.data.dqbm = '610102';
 				this.getTeatList('update')
 			},
+			// 点击擅长领域筛选
 			changeGoodSelect: function(index) {
 				this.goodName = this.goodList[index];
 				this.goodIndex = index;
@@ -178,6 +181,7 @@
 				this.selectStatus = '';
 				this.getTeatList('update')
 			},
+			// 点击从业年限筛选
 			changeYearSelect: function(index) {
 				this.yearName = this.yearList[index] + '年';
 				this.yearIndex = index;
@@ -200,22 +204,29 @@
 </script>
 
 <style lang="scss">
+	page {
+		height: 100%;
+	}
 	.team-wrap {
+		position: relative;
 		width: 100%;
 		height: 100%;
 		background-color: #f5f5f5;
 
 		.team-header {
+			position: absolute;
+			top: 0;
+			left: 0;
 			width: 100%;
 			height: 180rpx;
 		}
 
 		.team-select {
-			position: fixed;
+			position: absolute;
 			top: 180rpx;
 			left: 0;
 			width: 100%;
-			height: calc(100vh - 180rpx);
+			height: calc(100% - 180rpx);
 			z-index: 10;
 			background-color: rgba(0, 0, 0, .3);
 
@@ -284,8 +295,11 @@
 			
 		}
 		.team-body {
+			position: absolute;
+			top: 180rpx;
+			left: 0;
 			width: 100%;
-			height: calc(100vh - 180rpx);
+			height: calc(100% - 180rpx);
 
 			.team-list {
 				padding: 40rpx;
@@ -324,7 +338,7 @@
 				height: 40rpx;
 				padding: 0 8rpx;
 				font-size: 24rpx;
-				line-height: 40rpx;
+				line-height: 36rpx;
 				color: #9ea5ba;
 				border: 1px solid #cfe4ff;
 			}

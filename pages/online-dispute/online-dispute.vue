@@ -7,7 +7,7 @@
 				<picker @change="bindPickerChange" :value="typeIndex" :range="disputeType" range-key="name">
 					<view class="item-input flex-nowrap">
 						<view class="item-word">{{disputeType[typeIndex].name}}</view>
-						<view class="item-arrow">></view>
+						<view class="item-arrow iconfont arrow-right"></view>
 					</view>
 				</picker>
 			</view>
@@ -18,7 +18,7 @@
 				<picker mode="multiSelector" @columnchange="bindMultiPickerColumnChange" :value="areaIndex" :range="area" range-key="name">
 					<view class="item-input flex-nowrap">
 						<view class="item-word">{{area[0][areaIndex[0]].name}}，{{area[1][areaIndex[1]].name}}，{{area[2][areaIndex[2]].name}}</view>
-						<view class="item-arrow">></view>
+						<view class="item-arrow iconfont arrow-right"></view>
 					</view>
 				</picker>
 			</view>
@@ -35,12 +35,12 @@
 				<input class="item-address" v-model="apply.introduce" placeholder="详细信息" placeholder-class="input-placeholder" />
 			</view>
 		</view>
-		<view class="dispute-item flex-nowrap border-bottom" @tap="chooseVideo">
+		<view class="dispute-item flex-nowrap border-bottom dispute-item-space" @tap="chooseVideo">
 			<view class="item-title-upload">
 				<view class="upload">上传附件</view>
 				<view class="upload-video">上传视频，以描述您的纠纷</view>
 			</view>
-			<view class="upload-arrow">></view>
+			<view class="item-arrow iconfont arrow-right"></view>
 		</view>
 		<video v-if="apply.videoSrc" class="video-content" :src="apply.videoSrc"></video>
 
@@ -265,6 +265,7 @@
 						console.log(this,_this)
 						let applyList = JSON.parse(res.data)
 						_this.apply = applyList.apply,
+						_this.apply.code = '',
 						_this.typeIndex = applyList.typeIndex,
 						_this.areaIndex = applyList.areaIndex
 						console.log('this.apply',this.apply)
@@ -287,11 +288,13 @@
 			color: $gray-base;
 
 		}
+		.dispute-item-space {
+			align-items: center;
+			justify-content: space-between;
+		}
 
 		.dispute-item {
-			// position: relative;
 			padding: 25rpx 30rpx;
-			// line-height: 48rpx;
 			font-size: 32px;
 			background-color: $white;
 
